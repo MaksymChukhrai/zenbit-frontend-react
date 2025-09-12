@@ -10,6 +10,9 @@
   justify-content: flex-end;
   overflow: hidden;
   margin-top: 80px; // Отступ от header
+      @include mobile {
+    height: 30vh;
+  }
 }
 
 .backgroundImage {
@@ -57,7 +60,7 @@
   background: transparent; // Убираем белый фон и рамки
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
-  padding: map-get($spacings, 'xl');
+  // padding: map-get($spacings, 'xl');
   border-radius: 0;
   box-shadow: none;
   padding-right: 100px;
@@ -65,6 +68,9 @@
   
   @include mobile {
     padding: map-get($spacings, 'lg');
+     padding-right: 20px;
+  padding-left: 20px;
+      width: 320px;
   }
 }
 
