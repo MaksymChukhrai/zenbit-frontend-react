@@ -1,0 +1,75 @@
+@import '../../styles/mixins.scss';
+
+.home {
+  width: 100%;
+}
+
+.openDeals {
+  padding: 50px 80px;
+  background: #F2F2F2;
+  
+  @include mobile {
+    padding: 30px 20px;
+  }
+  
+  @include tablet {
+    padding: 40px 40px;
+  }
+  
+  .container {
+    padding: 0; 
+  }
+}
+
+.dealsContainer {
+  max-width: 1279px ; // Переопределяем глобальный стиль
+  margin: 0 auto ;
+  padding: 0 ;
+}
+
+.sectionTitle {
+  color: var(--B29F7E, #B29F7E);
+  font-family: $font-primary;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  margin-bottom: 20px; 
+  
+  @include mobile {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: map-get($spacings, 'xl');
+  font-family: $font-secondary;
+  font-size: map-get($font-sizes, 'body');
+}
+
+.loading {
+  color: var(--B29F7E, #B29F7E);
+}
+
+.error {
+  color: #ff4757;
+}

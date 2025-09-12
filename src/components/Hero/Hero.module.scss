@@ -1,0 +1,120 @@
+@import '../../styles/mixins.scss';
+
+.hero {
+      margin-top: 80px;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  @include mobile {
+    min-height: 500px;
+    height: 100vh;
+      margin-top: 70px
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../../public/images/Hero_pc_x2.webp');
+      opacity: 0.6;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 15, 25, 0.4) 0%,     
+    rgba(5, 20, 35, 0.6) 50%,    
+    rgba(10, 25, 40, 0.8) 100%   
+  );
+
+  z-index: -1;
+}
+
+.heroContent {
+  text-align: center;
+
+  margin: 0 auto;
+  padding: 0 map-get($spacings, 'md');
+  z-index: 1;
+  
+  @include mobile {
+    padding: 0 map-get($spacings, 'sm');
+  }
+}
+
+.heroTitle {
+  @include hero-title;
+
+  
+  @include mobile {
+    font-size: 28px;
+    line-height: 36px;
+   
+  }
+  
+  @include tablet {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+.heroSubtitle {
+  @include hero-subtitle;
+  margin: 0 auto 40px;
+  
+  @include mobile {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+  
+  @include tablet {
+    font-size: 20px;
+    line-height: 28px;
+       margin-bottom: 40px;
+  }
+}
+
+.ctaButton {
+display: inline-flex;
+  padding: 10px 24px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--white);
+  background-color: transparent; // Прозрачный фон
+  color: var(--white);
+  font-family: $font-primary; // Merriweather
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 34px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #B8A067;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(196, 168, 118, 0.3);
+  }
+  
+  @include mobile {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,81 @@
+@import './variables.scss';
+
+// Typography mixins
+@mixin hero-title {
+  color: var(--white);
+  text-align: center;
+  font-family: $font-primary;
+  font-size: map-get($font-sizes, 'hero-title');
+  font-weight: map-get($font-weights, 'bold');
+  line-height: map-get($line-heights, 'hero-title');
+  
+  @include mobile {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@mixin hero-subtitle {
+  color: var(--white);
+  text-align: center;
+  font-family: $font-secondary;
+  font-size: map-get($font-sizes, 'hero-subtitle');
+  font-weight: map-get($font-weights, 'regular');
+  line-height: map-get($line-heights, 'hero-subtitle');
+  letter-spacing: -0.48px;
+  max-width: 822px;
+  
+  @include mobile {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 100%;
+  }
+}
+
+@mixin card-title {
+  color: var(--white);
+  font-family: $font-primary;
+  font-size: map-get($font-sizes, 'card-title');
+  font-weight: map-get($font-weights, 'bold');
+  line-height: map-get($line-heights, 'card-title');
+}
+
+@mixin card-text {
+  color: var(--white);
+  font-family: $font-secondary;
+  font-size: map-get($font-sizes, 'card-text');
+  font-weight: map-get($font-weights, 'bold');
+  line-height: map-get($line-heights, 'card-text');
+}
+
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: #{map-get($breakpoints, 'tablet') - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{map-get($breakpoints, 'tablet')}) and (max-width: #{map-get($breakpoints, 'desktop') - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{map-get($breakpoints, 'desktop')}) {
+    @content;
+  }
+}
+
+// Utility mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

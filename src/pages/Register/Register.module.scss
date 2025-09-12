@@ -1,0 +1,222 @@
+@import '../../styles/mixins.scss';
+
+.registerPage {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-top: 80px; // Отступ от header
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 890px; // Половина экрана
+  height: 943px;
+  background-image: url('../../../public/images/Login_pc_x2.webp'); // Используем ту же картинку или замени на register картинку
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: -1;
+}
+
+.registerContainer {
+  z-index: 1;
+  background-color: var(--form-bg); // Светло-серый фон
+  min-height: calc(100vh - 80px); // Вычитаем высоту header
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ height: 943px;
+  
+  @include mobile {
+    min-height: calc(100vh - 80px);
+  }
+}
+
+.registerForm {
+  background: transparent; // Убираем белый фон и рамки
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  padding: map-get($spacings, 'xl');
+  border-radius: 0;
+  box-shadow: none;
+  padding-right: 100px;
+  padding-left: 100px;
+  
+  @include mobile {
+    padding: map-get($spacings, 'lg');
+  }
+}
+
+.title {
+  color: var(--text);
+  font-family: $font-primary;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: left;
+  margin-bottom: map-get($spacings, 'lg');
+  
+  @include mobile {
+    font-size: 24px;
+    margin-bottom: map-get($spacings, 'md');
+  }
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #d63384;
+  padding: map-get($spacings, 'sm');
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: map-get($spacings, 'md');
+  font-size: 14px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacings, 'md');
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr; // Одна колонка = поля друг под другом
+  gap: map-get($spacings, 'md'); // Увеличиваем gap для вертикального расположения
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: map-get($spacings, 'md');
+  }
+}
+
+.inputGroup {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacings, 'xs');
+  
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.label {
+  color: #000;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+
+.input {
+  display: flex;
+  width: 350px;
+  padding: 14px 20px 12px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid var(--background-title);
+  background: var(--background-title);
+  font-family: $font-secondary;
+  font-size: 14px;
+  color: #172234;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--B29F7E);
+    background-color: #fff;
+    opacity: 1;
+  }
+  
+  &::placeholder {
+    color: #6c757d;
+    font-family: $font-secondary;
+    font-size: 14px;
+  }
+  
+  @include mobile {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+}
+
+.submitButton {
+  width: 350px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: var(--B29F7E);
+  color: var(--white);
+  border: none;
+  font-family: $font-secondary;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: map-get($spacings, 'sm');
+  transition: all 0.3s ease;
+  
+  &:hover:not(:disabled) {
+    background-color: #9A8B6B;
+    transform: translateY(-1px);
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.loginLink {
+  width: 350px;
+  text-align: center;
+  margin-top: map-get($spacings, 'md');
+  color: var(--text);
+  font-family: $font-secondary;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.link {
+  color: var(--B29F7E);
+  text-decoration: none;
+  font-weight: 600;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

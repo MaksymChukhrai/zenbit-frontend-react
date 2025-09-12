@@ -1,0 +1,59 @@
+// Colors
+:root {
+  --white: #FFF;
+  --black: #000;
+  --text: #172234;
+  --primary: #2C2C2C;
+  --secondary: #7A7A7A;
+  --zenbit-dark: #141517;
+  --zenbit-blue: #035a91;
+  --button-gold: #B29F7E;
+  --B29F7E: #B29F7E;
+  --background-title: #E0E0E0;
+  --form-bg: #F0F6F6; 
+}
+
+// Fonts
+$font-primary: 'Merriweather', serif;
+$font-secondary: 'Lato', sans-serif;
+
+// Typography
+$font-sizes: (
+  'hero-title': 64px,
+  'hero-subtitle': 24px,
+  'card-title': 20px,
+  'card-text': 18px,
+  'body': 16px,
+  'small': 14px
+);
+
+$line-heights: (
+  'hero-title': 80px,
+  'hero-subtitle': 32px,
+  'card-title': 34px,
+  'card-text': 22px,
+  'body': 24px
+);
+
+$font-weights: (
+  'regular': 400,
+  'bold': 700
+);
+
+// Spacing
+$spacings: (
+  'xs': 8px,
+  'sm': 16px,
+  'md': 24px,
+  'lg': 32px,
+  'xl': 48px,
+  'xxl': 64px
+);
+
+// Breakpoints
+$breakpoints: (
+  'mobile': 320px,
+  'tablet': 768px,
+  'desktop': 1200px,
+  'large': 1440px
+);

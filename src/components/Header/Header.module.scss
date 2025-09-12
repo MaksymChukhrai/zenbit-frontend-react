@@ -1,0 +1,125 @@
+@import '../../styles/mixins.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  background: var(--text);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10), 0 10px 40px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.headerContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; // Логотип слева, кнопки справа
+  align-items: center;
+  width: 100%;
+  padding: 0 map-get($spacings, 'md');
+  height: 100%;
+  
+  @include mobile {
+    padding: 0 map-get($spacings, 'sm');
+  }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  
+  .zenPart {
+    color: var(--white); 
+  }
+  
+  .bitPart {
+    color: var(--zenbit-blue); 
+    font-weight: lighter;
+  }
+  
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  @include mobile {
+    gap: 12px;
+  }
+}
+
+.userName {
+  color: var(--white);
+  font-family: $font-secondary;
+  font-size: map-get($font-sizes, 'body');
+  margin-right: 8px;
+  
+  @include mobile {
+    display: none;
+  }
+}
+
+.loginBtn,
+.signupBtn,
+.logoutBtn {
+  width: 160px;
+  padding: 11px 0;
+  border-radius: 5px;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  
+  @include mobile {
+    width: 120px;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+}
+
+.loginBtn {
+  border: 1px solid var(--button-gold);
+  background: transparent;
+  color: var(--button-gold);
+  
+  &:hover {
+    background-color: var(--button-gold);
+    color: var(--white);
+  }
+}
+
+.signupBtn {
+  background: var(--button-gold);
+  color: var(--white);
+  border: 1px solid var(--button-gold);
+  
+  &:hover {
+    background-color: #9A8B6B;
+    border-color: #9A8B6B;
+  }
+}
+
+.logoutBtn {
+  border: 1px solid var(--button-gold);
+  background: transparent;
+  color: var(--button-gold);
+  
+  &:hover {
+    background-color: #ff4757;
+    color: var(--white);
+  }
+}
