@@ -198,7 +198,7 @@ $breakpoints: (
 
 **Installation & Running**  
 
-1. ***Clone the repository  ***
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/MaksymChukhrai/zenbit-frontend-react.git
@@ -214,14 +214,14 @@ npm install
 
 3. **Environment setup**
 
-    ```bash
-    # Create .env file with:
+```bash
+ # Create .env file with:
 
-    REACT_APP_API_URL=http://localhost:3000
-    # or for production:
+REACT_APP_API_URL=http://localhost:3000
+# or for production:
 
-    REACT_APP_API_URL=https://zenbit-backend-nestjs-api-production.up.railway.app
-    ```
+REACT_APP_API_URL=https://zenbit-backend-nestjs-api-production.up.railway.app
+```
 
 
 4. **Run the application**
